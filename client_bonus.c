@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabdenou <aabdenou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/14 20:29:07 by aabdenou          #+#    #+#             */
-/*   Updated: 2024/03/14 21:43:47 by aabdenou         ###   ########.fr       */
+/*   Created: 2024/03/14 20:28:53 by aabdenou          #+#    #+#             */
+/*   Updated: 2024/03/14 21:56:04 by aabdenou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ void send_bit(char c,pid_t server_pid)
 		bit--;
 	}
 }
+void end_sind(int sig)
+{
+    (void)sig;
+    ft_putstr("msg is send");
+}
 int	main(int argc, char *argv[])
 {
 	pid_t	server_pid;
@@ -41,6 +46,7 @@ int	main(int argc, char *argv[])
 			ft_putstr("PID Invalid");
 			exit(1);
 		}
+		signal(SIGUSR1, end_sind);
 		i = 0;
 		while (str[i])
 		{
