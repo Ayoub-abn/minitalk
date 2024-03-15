@@ -6,11 +6,12 @@
 /*   By: aabdenou <aabdenou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 20:29:13 by aabdenou          #+#    #+#             */
-/*   Updated: 2024/03/14 20:29:14 by aabdenou         ###   ########.fr       */
+/*   Updated: 2024/03/15 00:08:38 by aabdenou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
+
 static int	ft_len(int nb)
 {
 	int			i;

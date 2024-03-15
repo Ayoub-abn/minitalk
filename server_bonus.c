@@ -6,7 +6,7 @@
 /*   By: aabdenou <aabdenou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 20:28:50 by aabdenou          #+#    #+#             */
-/*   Updated: 2024/03/14 21:51:23 by aabdenou         ###   ########.fr       */
+/*   Updated: 2024/03/15 00:07:55 by aabdenou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	main()
     sa.sa_flags = SA_SIGINFO; 
     sa.sa_sigaction = handle_signal;
 	
-    if (sigaction(SIGUSR1, &sa, NULL) == -1 || sigaction(SIGUSR2, &sa, NULL))
+    if (sigaction(SIGUSR1, &sa, NULL) == -1 || sigaction(SIGUSR2, &sa, NULL) == -1)
     {
         ft_putstr("error sigaction");
         exit(1);
