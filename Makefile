@@ -11,10 +11,10 @@ OBGC = $(SRCC:.c=.o)
 all : $(NAME) $(NAME_2)
 
 $(NAME): $(OBGS)
-	$(CC) $(CFLAGS)$(OBGS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBGS) -o $(NAME)
 
 $(NAME_2): $(OBGC)
-	$(CC) $(CFLAGS)$(OBGC) -o $(NAME_2)
+	$(CC) $(CFLAGS) $(OBGC) -o $(NAME_2)
 
 clean:
 	rm -f $(OBGS) $(OBGC)

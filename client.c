@@ -6,18 +6,19 @@
 /*   By: aabdenou <aabdenou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 20:29:07 by aabdenou          #+#    #+#             */
-/*   Updated: 2024/03/14 21:43:47 by aabdenou         ###   ########.fr       */
+/*   Updated: 2024/03/17 15:48:36 by aabdenou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
-void send_bit(char c,pid_t server_pid)
+
+void	send_bit(char c, pid_t server_pid)
 {
 	int		bit;
+
 	bit = 7;
 	while (bit >= 0)
 	{
-				
 		if ((c >> bit) & 1)
 			kill(server_pid, SIGUSR1);
 		else
@@ -26,6 +27,7 @@ void send_bit(char c,pid_t server_pid)
 		bit--;
 	}
 }
+
 int	main(int argc, char *argv[])
 {
 	pid_t	server_pid;
@@ -34,9 +36,9 @@ int	main(int argc, char *argv[])
 
 	if (argc == 3)
 	{
-		server_pid = atoi(argv[1]);
+		server_pid = ft_atoi(argv[1]);
 		str = argv[2];
-		if(server_pid <= 0 || server_pid > 2147483647)
+		if (server_pid <= 0 || server_pid > 2147483647)
 		{
 			ft_putstr("PID Invalid");
 			exit(1);
@@ -44,10 +46,10 @@ int	main(int argc, char *argv[])
 		i = 0;
 		while (str[i])
 		{
-			send_bit(str[i],server_pid);
+			send_bit (str[i], server_pid);
 			i++;
 		}
-		send_bit(str[i],server_pid);
+		send_bit (str[i], server_pid);
 	}
 	else
 		ft_putstr("problem with the number of arg (PID or message)");

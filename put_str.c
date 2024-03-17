@@ -6,17 +6,19 @@
 /*   By: aabdenou <aabdenou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 20:29:19 by aabdenou          #+#    #+#             */
-/*   Updated: 2024/03/14 20:29:20 by aabdenou         ###   ########.fr       */
+/*   Updated: 2024/03/17 15:44:05 by aabdenou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
+
 void	ft_putstr(char *s)
 {
-	int	i = 0;
+	int	i;
+
+	i = 0;
 	while (s[i])
 		i++;
-
 	if (s == NULL)
 		return ;
 	write(1, s, i);

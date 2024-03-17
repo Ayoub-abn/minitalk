@@ -6,10 +6,11 @@
 /*   By: aabdenou <aabdenou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 20:29:11 by aabdenou          #+#    #+#             */
-/*   Updated: 2024/03/14 20:29:12 by aabdenou         ###   ########.fr       */
+/*   Updated: 2024/03/17 15:39:15 by aabdenou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "minitalk.h"
 
 int	ft_atoi(const char *str)
 {
@@ -33,5 +34,7 @@ int	ft_atoi(const char *str)
 		rus = rus * 10 + (str[i] - '0');
 		i++;
 	}
+	if (str[i])
+		write(1, "PID Invalid\n", 12);//ba9a khaseha tsayb
 	return (rus * sin);
 }
