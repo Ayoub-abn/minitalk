@@ -6,7 +6,7 @@
 /*   By: aabdenou <aabdenou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 20:28:57 by aabdenou          #+#    #+#             */
-/*   Updated: 2024/03/17 15:42:24 by aabdenou         ###   ########.fr       */
+/*   Updated: 2024/03/18 20:14:16 by aabdenou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,15 @@ void	handle_signal(int sig)
 
 int	main(void)
 {
-	ft_putstr("server PID: ");
-	ft_putstr(ft_itoa(getpid()));
-	ft_putstr("\n");
+	char	*pid;
+
+	pid = ft_itoa(getpid());
 	signal(SIGUSR1, handle_signal);
 	signal(SIGUSR2, handle_signal);
+	ft_putstr("server PID: ");
+	ft_putstr(pid);
+	free(pid);
+	ft_putstr("\n");
 	while (1)
 	{
 	}

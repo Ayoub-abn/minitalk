@@ -6,7 +6,7 @@
 /*   By: aabdenou <aabdenou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 20:28:50 by aabdenou          #+#    #+#             */
-/*   Updated: 2024/03/17 15:49:34 by aabdenou         ###   ########.fr       */
+/*   Updated: 2024/03/19 17:48:02 by aabdenou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,20 @@ void	handle_signal(int sig, siginfo_t *info, void *str)
 int	main(void)
 {
 	struct sigaction	sa;
+	char				*pid;
 
+	pid = ft_itoa(getpid());
 	sa.sa_flags = SA_SIGINFO;
 	sa.sa_sigaction = &handle_signal;
 	if (sigaction (SIGUSR1, &sa, NULL) == -1
 		|| sigaction (SIGUSR2, &sa, NULL) == -1)
 	{
-		ft_putstr("ralat");
+		ft_putstr("sigaction error ");
 		exit(1);
 	}
 	ft_putstr("server PID: ");
-	ft_putstr(ft_itoa(getpid()));
+	ft_putstr(pid);
+	free(pid);
 	ft_putstr("\n");
 	while (1)
 	{
