@@ -4,10 +4,11 @@ NAME_3 = server_bonus
 NAME_4 = client_bonus
 
 CFLAGS = -Wall -Wextra -Werror
-SRCS = ft_atoi.c ft_itoa.c put_str.c server.c
-SRCC =  ft_atoi.c ft_itoa.c put_str.c client.c
-SRCSB = ft_atoi.c ft_itoa.c put_str.c server_bonus.c
-SRCCB =  ft_atoi.c ft_itoa.c put_str.c client_bonus.c
+SRC = ft_atoi.c ft_itoa.c ft_putstr.c
+SRCS =  $(SRC) server.c
+SRCC =  $(SRC) client.c
+SRCSB = $(SRC) server_bonus.c
+SRCCB = $(SRC) client_bonus.c
 OBGS = $(SRCS:.c=.o)
 OBGC = $(SRCC:.c=.o)
 OBGSB = $(SRCSB:.c=.o)
@@ -34,4 +35,3 @@ fclean: clean
 	rm -f $(NAME) $(NAME_2) $(NAME_3) $(NAME_4)  
 
 re: fclean all
-

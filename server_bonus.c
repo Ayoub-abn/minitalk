@@ -6,11 +6,11 @@
 /*   By: aabdenou <aabdenou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 20:28:50 by aabdenou          #+#    #+#             */
-/*   Updated: 2024/03/19 17:48:02 by aabdenou         ###   ########.fr       */
+/*   Updated: 2024/03/22 16:47:11 by aabdenou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "minitalk_bonus.h"
 
 void	handle_signal(int sig, siginfo_t *info, void *str)
 {
@@ -42,8 +42,8 @@ int	main(void)
 	pid = ft_itoa(getpid());
 	sa.sa_flags = SA_SIGINFO;
 	sa.sa_sigaction = &handle_signal;
-	if (sigaction (SIGUSR1, &sa, NULL) == -1
-		|| sigaction (SIGUSR2, &sa, NULL) == -1)
+	if (sigaction(SIGUSR1, &sa, NULL) == -1
+		|| sigaction(SIGUSR2, &sa, NULL) == -1)
 	{
 		ft_putstr("sigaction error ");
 		exit(1);

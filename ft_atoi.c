@@ -6,16 +6,16 @@
 /*   By: aabdenou <aabdenou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 20:29:11 by aabdenou          #+#    #+#             */
-/*   Updated: 2024/03/17 19:44:48 by aabdenou         ###   ########.fr       */
+/*   Updated: 2024/03/22 16:34:17 by aabdenou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-int	ft_atoi(const char *str)
+long int	ft_atoi(const char *str)
 {
-	int					i;
-	int					sin;
+	long int			i;
+	long int			sin;
 	unsigned long long	rus;
 
 	i = 0;
